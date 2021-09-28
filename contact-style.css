@@ -1,0 +1,656 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+button{
+    cursor: pointer;
+}
+
+body::-webkit-scrollbar{
+    width: 15px;
+    background-color: #6b1515ec;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #ca2b2bcb;
+}
+
+body{
+    background-color: #EDE9E8;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+.menu-wrap{
+    display: none;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    height: 10vh;
+    line-height: 200%;
+    
+    margin-top: 1vh;
+}
+
+.logo-nav{
+    flex: 1;
+
+    text-decoration: none;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 50px;
+    font-weight: bold;
+    color: #fffefe;
+    text-shadow:#3d627c 2px 1px;
+}
+
+.nav-item{
+    margin-right: 1%;
+
+    text-decoration: none;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fdfdfd;
+    text-shadow: #3d627c 2px 3px;
+}
+
+.container nav button{
+    width: 100px;
+    height: 35px;
+
+    border-radius: 10%;
+    border: solid 2px  #ffffff;
+    
+    background-color: #3d627c;
+    
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 21px;
+    text-shadow: none;
+
+    transition: 0.3s ease-in-out;
+}
+
+.container nav button:hover{
+    background-color: #0984a3;
+    color: whitesmoke;
+}
+
+.wave1{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: rotate(180deg);
+    
+    z-index: -1;
+    
+    opacity: 0.88; /*nijansa boje */
+}
+
+
+
+.holder{
+    grid-area: hold;
+    position: relative;
+    top: 15vh;
+
+    height: 74vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "socials form"
+    "footer footer"
+    ;
+}
+
+.form-container{
+    grid-area: form;
+    place-self: center;
+    text-align: right;
+
+    height: 55vh;
+}
+
+.form-container h1{
+    width: 30vw;
+    margin-bottom: 3vh;
+    
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bold;
+    font-size: 65px;
+    color: #3d627c;
+    text-shadow: #fffefe 2px 1px; 
+}
+/*inputi*/
+input, input::placeholder{
+    width: 30vw;
+
+    margin-bottom: 5vh;
+
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 22px;
+    color: #3d627c;
+    text-shadow: #fffefe 2px 1px; 
+    background-color: transparent;
+
+    outline: none;
+    border: none;   
+    border-bottom: 3px solid rgba(128, 128, 128, 0.26);
+}
+/*textarea*/
+textarea{
+    width: 30vw;
+
+    font-size: 22px;
+
+    resize: none;
+    outline: none;
+    
+    border: 3px solid rgba(128, 128, 128, 0.26);
+    
+    font-family: 'Hammersmith One', sans-serif;
+    color: #3d627c;
+    text-shadow: #fffefe 2px 1px; 
+    background-color: transparent;
+}
+
+textarea::placeholder{
+    color: #3d627c;
+    text-shadow: #fffefe 2px 1px; 
+    font-size: 20px;
+}
+/*button*/
+.form-container button{
+    width: 150px;
+
+    border-radius: 5%;
+    border: solid 3px  #31495a;
+
+    background-color: #3d627c;
+
+    font-family: 'Hammersmith One', sans-serif;
+    color: #fdfdfd;
+    font-weight: bold;
+    font-size: 20px;
+
+    margin-top: 3%;
+    
+    transition: 0.3s ease-in-out;
+}
+
+.form-container button:hover{
+    font-family: 'Hammersmith One', sans-serif;
+    opacity: 0.9;
+    transform: scale(1.05);
+    background-color: #0984a3;
+}
+/*socials*/
+.socials{
+    position: relative;
+    grid-area: socials;
+    place-self: center;
+
+    height: 55vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.items{
+    width: 30vw;
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+
+    margin: 1vh;
+}
+
+.socials svg{
+    width: 50px;
+    height: 50px;
+    fill: #B71B2A;
+    filter: drop-shadow( #a39d9d 2px 2px);
+}
+
+.socials a{
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 28px;
+    color: #3d627c;
+    text-shadow: #fffefe 2px 1px; 
+    text-decoration: none;
+}
+/*footer*/
+.bg2{
+    position: absolute;
+    left: -20%;
+    width: 132.5%;
+    height: 100%;
+
+    background-color: #330606;
+
+    z-index: -1;
+}
+
+.footer{
+    grid-area: footer;
+
+    position: relative; /*zbog bg2*/
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "logo f-socials pages"
+    "copyright copyright copyright"
+    ;
+
+    background-color: #330606;
+    color: rgb(197, 197, 197);
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 18px;
+
+    padding: 15px;
+}
+
+.footer h3{
+    grid-area: logo;
+
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+
+    font-family: 'Kaushan Script', cursive;
+    text-decoration: none;
+    font-size: 45px;
+    font-weight: bold;
+    color: #3d627c;
+    text-shadow: #fffefe 2px 1px;
+}
+
+.f-socials{
+    grid-area: f-socials;
+
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.pages{
+    grid-area: pages;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/*headeri za liste*/
+.f-socials label, .pages label{
+    margin-bottom: 5px;
+
+    font-size: 20px;
+    border-bottom: 3px solid rgba(128, 128, 128, 0.034);
+}
+
+/*pojedinacne blok liste*/
+.f-items{
+    display: flex;
+    justify-content: center;
+    
+    text-decoration: none;
+    color: rgb(197, 197, 197);
+}
+.f-items a{
+    text-decoration: none;
+    color: rgb(197, 197, 197);
+}
+
+/*social ikonice*/
+.footer svg{
+    fill: rgb(197, 197, 197);
+}
+
+/*bottom line*/
+.footer p{
+    grid-area: copyright;
+
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 15px;
+
+    border-top: 3px solid rgba(128, 128, 128, 0.26);
+}
+/*submission status*/
+.status{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%,-5%);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 15vw;
+    height: 10vh;
+
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+
+    border: #e2e2e2 2px solid;
+    border-radius: 5%;
+
+    transition: 0.3s ease-in-out;
+}
+
+.message{
+    font-family: 'Hammersmith One', sans-serif;
+    color: whitesmoke;
+}
+
+.status-succes{
+    background: linear-gradient(to right, #2193b0c4, #6dd5edd2);
+    animation: status-anim 3s ease-in-out;
+}
+
+.status-fail{
+    background: linear-gradient(to left, #333333, #dd1818); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: status-anim 3s ease-in-out;
+}
+
+@keyframes status-anim{
+    0%{
+        opacity: 0;
+        pointer-events: none;
+    }
+    10%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:1250px)
+{
+    nav{ /*kad ubacis burger*/
+        justify-content: flex-start;
+        margin-top: 0vh;
+        margin-left: 1vw;
+    }
+
+    .menu-wrap{
+        display: block;
+    }
+
+    .burger{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        width: 50px;
+        height: 50px;
+        
+        z-index: 5;
+    }
+
+    /*KLASA ZA X BURGER*/
+
+
+    .line1, .line2, .line3{
+        width: 60%;
+        height: 4px;
+
+        background-color: white;
+
+        margin: 2px;
+
+        border-radius: 15px;
+
+        transition: 0.3s ease-in-out;
+    }
+
+    .line1-x{
+        transform: rotate(42deg);
+        transform-origin: top left;
+        margin-left: 15px;
+    }
+
+    .line2-x{
+        opacity: 0;
+    }
+
+    .line3-x{
+        transform: rotate(-42deg);
+        transform-origin: bottom left;
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+
+    .menu{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        position: absolute;
+        top: -15vh;
+        left: 0;
+
+        width: 100vw;
+        height: 15vh;
+
+        background-color:  #144f7aea;
+        border-bottom: 3px solid #fcfcfcef;
+
+        z-index: 4;
+
+        transition: 0.3s ease-in-out;
+    }
+
+    .menu ul li{
+        width: 100vw;
+        margin-top: 5px;
+        list-style-type: none;
+    }
+
+    .menu ul li:hover{
+        background-color:  #4c7ca163;
+    }
+
+    .menu ul a{
+        text-decoration: none;
+        font-family: 'Hammersmith One', sans-serif;
+        color: #ffffff;
+        font-size: 22px;
+        display: block;
+    }
+
+    .nav-item{
+        display: none;
+    }
+    
+    .logo-nav{
+        display: none;
+        flex: 0;
+        font-size: 35px;
+    }
+
+    .holder{
+        top: 2vh;
+
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "form"
+        "socials"
+        "footer"
+        ;
+    }
+    
+    .form-container{
+        text-align: center;
+        width: 60vw;
+        height: fit-content;
+    }
+    
+    .form-container h1{
+        width: 60vw;
+        margin-bottom: 5vh;
+        font-size: 80px;
+    }
+    /*inputi*/
+    input, input::placeholder{
+        width: 60vw;
+        font-size: 30px;
+    }
+    /*textarea*/
+    textarea{
+        width: 60vw;
+        font-size: 30px;
+    }
+    
+    textarea::placeholder{
+        font-size: 30px;
+    }
+    /*button*/
+    .form-container button{
+        width: 150px;
+
+        font-size: 25px;
+
+        margin-bottom: 5vh;
+    }
+    /*socials*/
+    .socials{
+        height: fit-content;
+        margin-left: -2vh;
+        margin-bottom: 5vh;
+    }
+    
+    .items{
+        width: 60vw;
+        height: 5vh;
+
+        justify-content: center;
+    
+        margin: 1vh;
+    }
+    
+    .socials a{
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width:415px){
+
+    .form-container{
+        width: 70vw;
+    }
+
+    .form-container h1{
+        width: 70vw;
+        font-size: 50px;
+    }
+    /*inputi*/
+    input, input::placeholder{
+        width: 70vw;
+        margin-bottom: 5vh;
+        font-size: 19px;
+    }
+    /*textarea*/
+    textarea{
+        width: 70vw;
+        font-size: 19px;
+    }
+    
+    textarea::placeholder{
+        font-size: 19px;
+    }
+    /*button*/
+    .form-container button{
+        width: 120px;
+        font-size: 19px;
+    }
+    
+    .socials a{
+        font-size: 19px;
+    }
+
+    .socials svg{
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "logo logo"
+        "f-socials f-socials"
+        "pages pages"
+        "copyright copyright"
+        ;
+
+        grid-gap: 3vw;
+    }
+
+    .footer h3{
+        font-size: 35px;
+    }
+    .socials label, .pages label{
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width:320px){ 
+    .items a{
+        font-size: 17.5px;
+    }
+
+    .footer h3{
+        font-size: 30px;
+    }
+    .socials label, .pages label{
+        font-size: 18px;
+    }
+}
